@@ -1,5 +1,5 @@
 class TrajetsController < ApplicationController
-  before_action :set_trajet, only: %i[show create new edit update]
+  before_action :set_trajet, only: %i[show destroy edit update ]
 
   def show
   end
@@ -14,7 +14,7 @@ class TrajetsController < ApplicationController
   end
 
   def new
-    @Trajet.new
+    @trajet = Trajet.new
   end
 
   def edit
@@ -26,6 +26,10 @@ class TrajetsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @trajet.destroy
   end
 
   private
