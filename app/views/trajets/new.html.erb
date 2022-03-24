@@ -1,2 +1,4 @@
-<h1>Trajets#new</h1>
-<p>Find me in app/views/trajets/new.html.erb</p>
+<h1>Nouveau Trajets</h1>
+
+<%= render 'form', trajet: @trajet %>
+<%= link_to 'Mes trajets', trajets_path(@trajet) %>

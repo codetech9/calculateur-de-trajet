@@ -5,3 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Trajet.destroy_all
+trajet_test = Trajet.create!({origin_addresse: "Fort-de-france", destination_addresse: "Morne-rouge"})
