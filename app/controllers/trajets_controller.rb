@@ -1,8 +1,13 @@
 class TrajetsController < ApplicationController
-  before_action :set_trajet, only: %i[show create new edit update]
+  before_action :set_trajet, only: %i[show destroy edit update]
+
+  def index
+    @trajets = Trajet.all
+  end
 
   def show
   end
+
 
   def create
     @trajet = Trajet.new(trajet_params)
@@ -14,7 +19,7 @@ class TrajetsController < ApplicationController
   end
 
   def new
-    @Trajet.new
+    @trajet = Trajet.new
   end
 
   def edit
@@ -27,6 +32,12 @@ class TrajetsController < ApplicationController
       render :edit
     end
   end
+
+  def destroy
+    @trajet.destroy
+    redirect_to trajets_path
+  end
+
 
   private
 

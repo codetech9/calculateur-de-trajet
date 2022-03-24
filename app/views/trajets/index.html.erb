@@ -1,0 +1,8 @@
+<h1>Mes trajets</h1>
+
+
+<% @trajets.each do |trajet| %>
+  <p><%= trajet.origin_addresse %>
+  <p><%= trajet.destination_addresse %><p>
+  <%= link_to 'delete', trajet_path(trajet), method: :delete %>
+<% end %>
