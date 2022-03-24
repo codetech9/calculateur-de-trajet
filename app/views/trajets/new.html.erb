@@ -1,3 +1,5 @@
-<h1>Trajets#new</h1>
 
- <%= render 'form',trajet: @trajet %>
+<h1>Nouveau Trajets</h1>
+
+<%= render 'form', trajet: @trajet %>
+<%= link_to 'Mes trajets', trajets_path(@trajet) %>

@@ -1,2 +1,4 @@
 class Trajet < ApplicationRecord
+
+
 end
