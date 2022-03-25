@@ -1,6 +1,8 @@
-<h1>Mes trajets</h1>
+<h1>Mon trajet</h1>
 
+<p><%= @trajet.origin_addresse %>
+<p><%= @trajet.destination_addresse %><p>
 
-
+<%= link_to 'Mes trajets', trajets_path %>
 <%= link_to 'Nouveau trajet', new_trajet_path %>
 <%=  link_to 'Modifier', edit_trajet_path(@trajet)%>

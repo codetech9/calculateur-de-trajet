@@ -1,13 +1,25 @@
 <h1>Mes trajets</h1>
 
+
 <%= link_to 'Nouveau', new_trajet_path, :class => "btn btn-success" %>
 
+<p><%= link_to 'Nouveau', new_trajet_path %></p>
+
+
+
 <% @trajets.each do |trajet| %>
+  <%= link_to trajet_path(trajet) do %>
   <div>
     <p><%= trajet.origin_addresse %>
     <p><%= trajet.destination_addresse %><p>
   </div>
 
+
   <%=  link_to 'Modifier', edit_trajet_path(trajet), :class => "btn btn-primary" %>
   <%= link_to 'Supprimer', trajet_path(trajet), method: :delete, :class => "btn btn-primary"%>
+
+  <% end %>
+  <%=  link_to 'Modifier', edit_trajet_path(trajet)%>
+  <%= link_to 'Supprimer', trajet_path(trajet), method: :delete %>
+
 <% end %>
