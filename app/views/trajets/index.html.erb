@@ -2,8 +2,11 @@
 
 
 <% @trajets.each do |trajet| %>
-  <p><%= trajet.origin_addresse %>
-  <p><%= trajet.destination_addresse %><p>
-  <%= link_to 'delete', trajet_path(trajet), method: :delete %>
-  <%=  link_to 'Modifier', edit_trajet_path(@trajet)%>
+  <div>
+    <p><%= trajet.origin_addresse %>
+    <p><%= trajet.destination_addresse %><p>
+  </div>
+  <%= link_to 'Nouveau', new_trajet_path %>
+  <%=  link_to 'Modifier', edit_trajet_path(trajet)%>
+  <%= link_to 'Supprimer', trajet_path(trajet), method: :delete %>
 <% end %>
