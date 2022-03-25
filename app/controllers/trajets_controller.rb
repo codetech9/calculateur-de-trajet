@@ -1,4 +1,5 @@
 class TrajetsController < ApplicationController
+  skip_before_action :authenticate_user!, only: :new
   before_action :set_trajet, only: %i[show destroy edit update]
 
   def index
