@@ -9,6 +9,9 @@ class TrajetsController < ApplicationController
   def show
   end
 
+  def home
+    @trajets-courants =Trajet.where(courant:true)
+  end
 
   def create
     @trajet = Trajet.new(trajet_params)
