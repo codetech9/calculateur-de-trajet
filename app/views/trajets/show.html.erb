@@ -2,7 +2,7 @@
 
 <p><%= @trajet.origin_addresse %>
 <p><%= @trajet.destination_addresse %><p>
-
+<p><%= @trajet.time %></p>
 <%= link_to 'Mes trajets', trajets_path %>
 <%= link_to 'Nouveau trajet', new_trajet_path %>
 <%=  link_to 'Modifier', edit_trajet_path(@trajet)%>
