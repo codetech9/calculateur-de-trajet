@@ -11,6 +11,7 @@ class TrajetsController < ApplicationController
   end
 
   def show
+    google_api
   end
 
   def home

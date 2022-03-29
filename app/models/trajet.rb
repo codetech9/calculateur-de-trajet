@@ -1,18 +1,16 @@
 class Trajet < ApplicationRecord
-
-  def time_without_traffic
-    search['rows'][0]['elements'][0]['duration']['text']
-  end
+  before_save :set_traffic_and_distance
 
   def time_with_traffic
     search['rows'][0]['elements'][0]['duration_in_traffic']['text']
   end
 
-  def distance
-    search['rows'][0]['elements'][0]['distance']['text']
-  end
-
   private
+
+  def set_traffic_and_distance
+    self.time_without_traffic = search['rows'][0]['elements'][0]['duration']['text']
+    self.distance = search['rows'][0]['elements'][0]['distance']['text']
+  end
 
   def search
     ascii_origin = ActiveSupport::Inflector.transliterate(origin_addresse)
