@@ -7,6 +7,25 @@ class Trajet < ApplicationRecord
     search(time)['rows'][0]['elements'][0]['duration_in_traffic']['text']
   end
 
+  def bouchon?(time)
+    time_with_traffic = time_with_traffic(time)
+    traffic_int = time_as_int(time_with_traffic)
+    no_traffic_int = time_as_int(time_without_traffic)
+    traffic_int - no_traffic_int > 60
+  end
+
+  def time_as_int(string)
+    array = string.split(' ')
+    if array.size > 2
+      hours = array[0].to_i
+      minutes = array[2].to_i
+    else
+      hours = 0
+      minutes = array[0].to_i
+    end
+    time = (Time.now + hours.hours + minutes.minutes).to_i
+  end
+
   private
 
   def set_traffic_and_distance

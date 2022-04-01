@@ -12,6 +12,13 @@
   <%= submit_tag "Search", class: "btn btn-primary" %>
 <% end %>
 
+
+<div class="cards_container">
+  <%= image_tag('carte', id: 'main_map') %>
+  <%= image_tag('fdfstpierre', id: 'fdfstpierre', class: "trajets #{'bouchon' if Trajet.last.bouchon?(params[:time] || "now")}") %>
+</div>
+
+
 <% @trajets.each do |trajet| %>
   <%= link_to trajet_path(trajet), {:style => "text-decoration: none; color:black"} do %>
     <div class="card ctn mx-auto mt-4 w-mid col-12 col-md-6">
