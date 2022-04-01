@@ -4,6 +4,14 @@ export default class extends Controller {
 
   connect() {
     console.log("Hello from our first Stimulus controller");
-    alert.apply("hello");
+    console.log("test2");
+  }
+
+  initGoogle() {
+    // setup autocomplete
+  }
+
+  placeSelected() {
+    // use values from autocomplete
   }
 }

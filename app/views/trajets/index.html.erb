@@ -1,5 +1,16 @@
 <h1> Mes trajets </h1>
 
+<%= form_tag trajets_path, method: :get do %>
+  <%= label_tag 'Quand souhaitez vous partir ?'  %>
+  <%= range_field_tag :time,
+    params[:time],
+    min: 0,
+    max: 12,
+    value: params[:time].to_i || 0,
+    step: 1
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
 
 <% @trajets.each do |trajet| %>
   <%= link_to trajet_path(trajet), {:style => "text-decoration: none; color:black"} do %>

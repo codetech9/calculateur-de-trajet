@@ -7,6 +7,7 @@ class TrajetsController < ApplicationController
 
   def index
     @trajets = Trajet.all
+    @trajet = Trajet.new
     google_api
   end
 
@@ -64,7 +65,12 @@ class TrajetsController < ApplicationController
 
   def search(string)
     ascii_string = ActiveSupport::Inflector.transliterate(string)
-    url = URI("https://maps.googleapis.com/maps/api/distancematrix/json?origins=Boston%2CMA%7CCharlestown%2CMA&destinations=Lexington%2CMA%7CConcord%2CMA&departure_time=#{google_api}")
+
+
+
+    urlducontrolleur = '/trajets/search'
+
+    url = URI("https://maps.googleapis.com/maps/api/distancematrix/json?origins=#{ascii_origin}&destinations=#{ascii_destination}&departure_time=#{ departure_time || "now"}&key=#{ENV['GOOGLE']}")
 
     https = Net::HTTP.new(url.host, url.port)
     https.use_ssl = true
