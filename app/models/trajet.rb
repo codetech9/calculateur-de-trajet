@@ -11,7 +11,7 @@ class Trajet < ApplicationRecord
     time_with_traffic = time_with_traffic(time)
     traffic_int = time_as_int(time_with_traffic)
     no_traffic_int = time_as_int(time_without_traffic)
-    traffic_int - no_traffic_int > 60
+    traffic_int - no_traffic_int > 0
   end
 
   def time_as_int(string)
@@ -29,8 +29,8 @@ class Trajet < ApplicationRecord
   private
 
   def set_traffic_and_distance
-    self.time_without_traffic = search['rows'][0]['elements'][0]['duration']['text']
-    self.distance = search['rows'][0]['elements'][0]['distance']['text']
+    self.time_without_traffic = search('now')['rows'][0]['elements'][0]['duration']['text']
+    self.distance = search('now')['rows'][0]['elements'][0]['distance']['text']
   end
 
   def search(time)

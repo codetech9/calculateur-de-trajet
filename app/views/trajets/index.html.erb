@@ -15,7 +15,13 @@
 
 <div class="cards_container">
   <%= image_tag('carte', id: 'main_map') %>
-  <%= image_tag('fdfstpierre', id: 'fdfstpierre', class: "trajets #{'bouchon' if Trajet.last.bouchon?(params[:time] || "now")}") %>
+  <%= image_tag('fdfstpierre', id: 'fdfstpierre', class: "trajets #{'bouchon' if Trajet.find(19).bouchon?(params[:time] || "now")}") %>
+  <%= image_tag('fdflamentin', id: 'fdflamentin', class: "trajets #{'bouchon' if Trajet.find(14).bouchon?(params[:time] || "now")}") %>
+  <%= image_tag('fdftrinite', id: 'fdftrinite', class: "trajets #{'bouchon' if Trajet.find(15).bouchon?(params[:time] || "now")}") %>
+  <%= image_tag('lamentinrivieresalee', id: 'lamentinrivieresalee', class: "trajets #{'bouchon' if Trajet.find(16).bouchon?(params[:time] || "now")}") %>
+  <%= image_tag('marinfrancois', id: 'marinfrancois', class: "trajets #{'bouchon' if Trajet.find(17).bouchon?(params[:time] || "now")}") %>
+  <%= image_tag('rivieresaleetroisilets', id: 'rivieresaleetroisilets', class: "trajets #{'bouchon' if Trajet.find(18).bouchon?(params[:time] || "now")}") %>
+  <%= image_tag('rivieresaleemarin', id: 'rivieresaleemarin', class: "trajets #{'bouchon' if Trajet.find(18).bouchon?(params[:time] || "now")}") %>
 </div>
 
 
