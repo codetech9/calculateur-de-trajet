@@ -304,7 +304,8 @@
 <g>
 </g>
 </svg>
-          Temps sans traffic: <%= @trajet.time_without_traffic %>
+          Temps avec traffic: <%= @trajet.time_with_traffic(params[:time] || "now")
+           %>
         </p>
         <p>
                 <svg version="1.1" id="Layer_1" height="32" width="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -410,7 +411,7 @@
 <g>
 </g>
 </svg>
-          Temps avec traffic: <%= @trajet.time_with_traffic(params[:time] || "now") %>
+        Temps sans traffic: <%= @trajet.time_without_traffic  %>
         </p>
         <%= link_to new_trajet_path, {:class => "btn btn-light", :style => "color: black;"} do   %>
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-return-left" viewBox="0 0 16 16">
