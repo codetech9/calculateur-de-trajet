@@ -21,13 +21,13 @@
 
 <div class="cards_container" style="margin-top:0;">
   <%= image_tag('carte', id: 'main_map', class: "rounded-3") %>
-  <%= image_tag('fdfstpierre', id: 'fdfstpierre', class: "trajets #{'bouchon' if Trajet.find(15).bouchon?(params[:time] || "now")}") %>
-  <%= image_tag('fdflamentin', id: 'fdflamentin', class: "trajets #{'bouchon' if Trajet.find(8).bouchon?(params[:time] || "now")}") %>
-  <%= image_tag('fdftrinite', id: 'fdftrinite', class: "trajets #{'bouchon' if Trajet.find(9).bouchon?(params[:time] || "now")}") %>
-  <%= image_tag('lamentinrivieresalee', id: 'lamentinrivieresalee', class: "trajets #{'bouchon' if Trajet.find(10).bouchon?(params[:time] || "now")}") %>
-  <%= image_tag('marinfrancois', id: 'marinfrancois', class: "trajets #{'bouchon' if Trajet.find(11).bouchon?(params[:time] || "now")}") %>
-  <%= image_tag('rivieresaleetroisilets', id: 'rivieresaleetroisilets', class: "trajets #{'bouchon' if Trajet.find(12).bouchon?(params[:time] || "now")}") %>
-  <%= image_tag('rivieresaleelemarin', id: 'rivieresaleelemarin', class: "trajets #{'bouchon' if Trajet.find(13).bouchon?(params[:time] || "now")}") %>
+  <%= image_tag('fdfstpierre', id: 'fdfstpierre', class: "trajets #{'bouchon' if Trajet.find(8).bouchon?(params[:time] || "now")}") %>
+  <%= image_tag('fdflamentin', id: 'fdflamentin', class: "trajets #{'bouchon' if Trajet.find(1).bouchon?(params[:time] || "now")}") %>
+  <%= image_tag('fdftrinite', id: 'fdftrinite', class: "trajets #{'bouchon' if Trajet.find(2).bouchon?(params[:time] || "now")}") %>
+  <%= image_tag('lamentinrivieresalee', id: 'lamentinrivieresalee', class: "trajets #{'bouchon' if Trajet.find(3).bouchon?(params[:time] || "now")}") %>
+  <%= image_tag('marinfrancois', id: 'marinfrancois', class: "trajets #{'bouchon' if Trajet.find(4).bouchon?(params[:time] || "now")}") %>
+  <%= image_tag('rivieresaleetroisilets', id: 'rivieresaleetroisilets', class: "trajets #{'bouchon' if Trajet.find(5).bouchon?(params[:time] || "now")}") %>
+  <%= image_tag('rivieresaleelemarin', id: 'rivieresaleelemarin', class: "trajets #{'bouchon' if Trajet.find(7).bouchon?(params[:time] || "now")}") %>
 </div>
 
 
