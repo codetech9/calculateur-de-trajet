@@ -1,9 +1,9 @@
-<div data-controller="address" >
-  <%= simple_form_for @trajet do |f| %>
-    <div class="address">
-      <%= f.input :origin_addresse %>
-      <%= f.input :destination_addresse %>
-      <%= f.submit %>
-    </div>
+ <div class="container">
+  <%= simple_form_for(@trajet) do |f| %>
+    <%= f.input :origin_addresse %>
+    <%= f.input :destination_addresse %>
+  <div class="mx-auto">
+      <%= f.button :submit, class: "btn btn-primary" %>
+  </div>
   <% end %>
 </div>

@@ -41,7 +41,7 @@ class Trajet < ApplicationRecord
       departure_time = time
     end
 
-    ascii_origin = ActiveSupport::Inflector.transliterate(origin_addresse)
+     ascii_origin = ActiveSupport::Inflector.transliterate(origin_addresse)
     ascii_destination = ActiveSupport::Inflector.transliterate(destination_addresse)
     url = URI("https://maps.googleapis.com/maps/api/distancematrix/json?origins=#{ascii_origin}&destinations=#{ascii_destination}&departure_time=#{departure_time}&key=#{ENV['GOOGLE']}")
     p url

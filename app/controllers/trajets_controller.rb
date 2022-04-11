@@ -63,6 +63,10 @@ class TrajetsController < ApplicationController
     @google_api_key = ENV['GOOGLE']
   end
 
+  def saisie 
+  end
+
+
   def search(string)
     ascii_string = ActiveSupport::Inflector.transliterate(string)
 
@@ -71,7 +75,6 @@ class TrajetsController < ApplicationController
     urlducontrolleur = '/trajets/search'
 
     url = URI("https://maps.googleapis.com/maps/api/distancematrix/json?origins=#{ascii_origin}&destinations=#{ascii_destination}&departure_time=#{ departure_time || "now"}&key=#{ENV['GOOGLE']}")
-
     https = Net::HTTP.new(url.host, url.port)
     https.use_ssl = true
 
