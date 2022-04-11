@@ -1,7 +1,7 @@
 class Trajet < ApplicationRecord
   before_save :set_traffic_and_distance
 
-  attr_accessor :time
+  attr_accessor :time, :emplacement
 
   def time_with_traffic(time)
     search(time)['rows'][0]['elements'][0]['duration_in_traffic']['text']
@@ -52,5 +52,22 @@ class Trajet < ApplicationRecord
 
     response = https.request(request)
     JSON.parse(response.read_body, object_class: Hash)
+  end
+
+
+  def emplacement
+    require "uri"
+    require "net/http"
+    ascii_origin = ActiveSupport::Inflector.transliterate(origin_addresse)
+    ascii_destination = ActiveSupport::Inflector.transliterate(destination_addresse)
+    url = URI("https://maps.googleapis.com/maps/api/place/queryautocomplete/json?input=#{ascii_origin}&input=#{ascii_destination}&country=mq&location=14.641528%2C-61.024174&radius=65000&language=fr&key=#{ENV['GOOGLE']}")
+
+    https = Net::HTTP.new(url.host, url.port)
+    https.use_ssl = true
+
+    request = Net::HTTP::Get.new(url)
+
+    response = https.request(request)
+    puts response.read_body
   end
 end
