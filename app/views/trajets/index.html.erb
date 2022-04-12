@@ -1,5 +1,5 @@
-<div class="p-8 m-0 bg-light mx-auto col-10 rounded-3 container-fluid py-5">
-  <h1 style="margin:0; color:$greenblue" class="greenblue text-start"> &#128664; Vos trajets </h1>
+<div class="container px-4  py-5 my-5 text-center bg-white">
+  <h1 style="margin:0; color:$greenblue" class="greenblue text-center"> &#128664; Vos trajets 🌴</h1>
   <hr style="color:#093742; margin:0!important;">
   <hr style="color:#093742;">
     <%= form_tag trajets_path,class: "text-center mt-8" , method: :get do %>
@@ -10,15 +10,15 @@
      min: 0,
       max: 60,
       value: params[:time].to_i || 0,
-      step: 15
+      step: 5
       %>
       min <%= submit_tag "Go", class: "btn btn-primary rounded" %>
   </div>
   <% end %>
-</div>
+
 
 <!--imagecarte-->
-<div class="cards_container" style="margin-top:0;">
+<div class="cards_container px-4  my-5" >
   <%= image_tag('carte.jpg', id: 'main_map', class: "rounded-3") %>
   <%= image_tag('fdfstpierre.jpg', id: 'fdfstpierre', class: "trajets #{'bouchon' if Trajet.all[6].bouchon?(params[:time] || "now")}") %>
   <%= image_tag('fdflamentin.jpg', id: 'fdflamentin', class: "trajets #{'bouchon' if Trajet.find(8).bouchon?(params[:time] || "now")}") %>
@@ -33,7 +33,7 @@
 <% @trajets.each do |trajet| %>
   <%= link_to trajet_path(trajet), {:style => "text-decoration: none; color:black"} do %>
     <div class="card ctn mx-auto mt-4 w-mid col-12 col-md-6">
-      <div class="card-body" id="card-designs">
+      <div class="card-body text-start" id="card-designs">
         <p>
         <%= render 'depart' %>
         Adresse de départ: <%= trajet.origin_addresse %></p>
