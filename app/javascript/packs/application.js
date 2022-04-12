@@ -11,13 +11,5 @@ import "channels"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
-
 import "controllers"
 
-window.initMap = function () {
-  const event = new Event('google-maps-callback', {
-    bubbles: true,
-    cancelable: true,
-  })
-  window.dispatchEvent(event)
-}
