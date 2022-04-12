@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get '/livetraffic', to: 'trajets#courant'
   get 'pages/home'
   devise_for :users
   # get 'trajets/show'

@@ -2,11 +2,17 @@ require "uri"
 require "net/http"
 
 class TrajetsController < ApplicationController
-  skip_before_action :authenticate_user!, only: :new
+  skip_before_action :authenticate_user!, only: :courant
   before_action :set_trajet, only: %i[show destroy edit update]
 
   def index
-    @trajets = Trajet.all
+    @trajets = Trajet.where(courant: false)
+    @trajet = Trajet.new
+    google_api
+  end
+
+  def courant
+    @trajets = Trajet.where(courant: true)
     @trajet = Trajet.new
     google_api
   end
@@ -63,14 +69,12 @@ class TrajetsController < ApplicationController
     @google_api_key = ENV['GOOGLE']
   end
 
-  def saisie 
+  def saisie
   end
 
 
   def search(string)
     ascii_string = ActiveSupport::Inflector.transliterate(string)
-
-
 
     urlducontrolleur = '/trajets/search'
 
