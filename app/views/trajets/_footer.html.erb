@@ -1,5 +1,8 @@
-<div class="footer-copyright">
-  <div class="container-fluid">
-    <p>Alé viré</p>
+<div class="footer mt-auto py-3 ">
+  <div class="container bg-priamry d-flex text-center">
+   <%= link_to pages_home_path, {:class => "btn btn-light", :style => "color: black;"} do   %>
+        home
+    <% end %>
+    <%= link_to 'trafic en martinique', livetraffic_path, class: "nav-link" %>
   </div>
 </div>
