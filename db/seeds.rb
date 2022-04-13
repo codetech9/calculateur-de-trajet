@@ -14,3 +14,4 @@ trajet_4 = Trajet.create!({origin_addresse: "Marin Martinique", destination_addr
 trajet_5 = Trajet.create!({origin_addresse: "Rivière-salée Martinique", destination_addresse: "Trois-îlets martinique",time: "now", courant: true})
 trajet_6 = Trajet.create!({origin_addresse: "Rivière-salée Martinique", destination_addresse: "Marin martinique",time: "now", courant: true})
 trajet_7 = Trajet.create!({origin_addresse: "Rivière-salée Martinique", destination_addresse: "Le Marin martinique",time: "now", courant: true})
+trajet_8 = Trajet.create!({origin_addresse: "Fort-de-france Martinique", destination_addresse: "Saint-pierre martinique",time: "now", courant: true})
