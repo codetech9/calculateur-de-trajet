@@ -1,16 +1,13 @@
-<div class="footer bg-white">
+<div class="footer d-flex bg-white" >
   <div class="container d-flex justify-content-between align-items-center">
 
-  <%= link_to "#", class: "navbar-brand ms-5" do %>
-          <%= image_tag"logocalc.png", class:"img ",width:55, alt:"logo-ale-vire" %>
-  <% end %>
-  <div class="d-flex align-items-end me-5">
-      <%= link_to pages_home_path, {:class => " btn", :style => "color: blackrgba(0, 0, 0, 0.55);"} do   %>
-            Home
-      <% end %>
-      <%= link_to  livetraffic_path, {class: " btn", :style => "color: black;"} do %>
-        Trafic en Martinique
-      <% end %>
-  </div>
+    <%= link_to pages_home_path, class: "ms-5" do %>
+            <%= image_tag"logocalc.png", class:"img ",width:55, alt:"logo-ale-vire" %>
+    <% end %>
+    <div class="d-flex align-items-center justify-content-center mt-4 me-5">
+        <p>
+        © 2022 Copyright: Alé Viré
+        </p>
+    </div>
   </div>
 </div>

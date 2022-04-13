@@ -1,12 +1,12 @@
 <h1>Mon trajet</h1>
-<div class="card ctn mx-auto mt-4 w-mid col-12 col-md-6">
+<div class="card container mb-10 mt-4 w-mid col-12 col-md-6" style="margin-bottom: 310px">
       <div class="card-body" id="card-designs">
         <p>
         <%= render 'depart' %>
           Adresse de départ: <%= @trajet.origin_addresse %>
         </p>
         <p>
-              <%= render 'destination' %>
+            <%= render 'destination' %>
             Adresse de destination: <%= @trajet.destination_addresse %>
         </p>
       <p>
@@ -27,12 +27,6 @@
             <path fill-rule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"/>
           </svg>
       <% end %>
-         <%= link_to new_trajet_path, {:class => "btn btn-primary linkz", :style => "color: aliceblue;"} do   %>
-          Nouveau
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
-            <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
-        </svg>
-        <% end %>
       <%=  link_to edit_trajet_path(@trajet), {:class => "btn btn-success linkz", :style => "color: aliceblue; text-decoration: none;"} do %>
         Modifier
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
