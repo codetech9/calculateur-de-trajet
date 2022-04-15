@@ -44,12 +44,12 @@
             </p>
             <p>
               <%= render 'temps' %>
-              Temps avec trafic: <%= trajet.time_with_traffic(params[:time] || "now")
+              Temps sans trafic: <%= trajet.time_with_traffic(params[:time] || "now")
               %>
             </p>
             <p>
             <%= render 'wtraffic' %>
-            Temps sans trafic: <%= trajet.time_without_traffic  %>
+            Temps avec trafic: <%= trajet.time_without_traffic  %>
             </p>
         <div class="d-flex flex-wrap">
           <%= link_to pages_home_path, {:class => "btn btn-light", :style => "color: black;"} do   %>
